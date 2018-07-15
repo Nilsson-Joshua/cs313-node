@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Fantasy Character Generator</title>
+    <meta name="description" content="Fantasy Character Generator">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <h1><a href="/">Fantasy Character Generator</a></h1>
+        <button type="button" class="example" id="example" onclick="loadDoc(); hideUpdateForm()">EXAMPLE  <i class="fas fa-angle-double-right"></i></button>
+      </header>
+      <main>
+
+        <div class="entry">
+          <form onsubmit="generate()" id="resetForm">
+
+            <!-- TABLE SELECTION -->
+            <div id="tableInputs">
+              <!-- LOCAL -->
+              <input type="radio" name="table" value="local" id="local">
+              <label for="local"><i class="fas fa-home"></i> Local</label>
+              <!-- COMMUNITY -->
+              <input type="radio" name="table" value="community" id="community">
+              <label for="community"><i class="fas fa-globe"></i> Community</label>
+            </div>
+            <!-- NAME -->
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Wren" maxlength="10" class="animate-input shadow-pop-br" id="name" autofocus required>
+
+            <!-- ROLE -->
+            <label for="role">Role</label>
+            <input type="text" name="role" placeholder="Bounty Hunter" list="roles" class="animate-input shadow-pop-br" id="role" required>
+            <datalist id="roles">
+              <option value="Bounty Hunter"></option>
+              <option value="Mercenary"></option>
+              <option value="Zealot"></option>
+            </datalist>
+
+            <!-- AGE -->
+            <label for="age">Age</label>
+            <input type="number" name="age" placeholder="123" min="0" class="animate-input shadow-pop-br" id="age" required>
+
+            <!-- GENDER -->
+            <label>Gender</label>
+            <div id="genderInputs">
+              <!-- MALE -->
+              <input type="radio" name="gender" value="male" id="male" checked>
+              <label for="male"><i class="fas fa-mars"></i> Male</label>
+              <!-- FEMALE -->
+              <input type="radio" name="gender" value="female" id="female">
+              <label for="female"><i class="fas fa-venus"></i> Female</label>
+            </div>
+
+            <!-- DISPLAY RACE/NATIONALITY -->
+            <p><button type="button" id="showBtn" title="Expand" onclick="showRaceNationality()"><i class="fas fa-plus-circle fa-2x"></i></button></p>
+
+            <!-- RACE -->
+            <div id="raceDOM">
+              <div id="raceDIV"></div>
+            </div>
+
+            <!-- NATIONALITY -->
+            <div id="nationalityDOM">
+              <div id="nationalityDIV"></div>
+            </div>
+
+            <div id="counterTest"></div>
+            <!-- SUBMIT/RANDOMIZE -->
+            <button type="submit" value="SUBMIT" id="submit"><i class="fas fa-save"></i> SUBMIT</button>
+            <button type="reset" value="RESET" id="reset" onclick="resetForm()"><i class="fas fa-cut"></i> RESET</button>
+          </form>
+
+          <div id="update-form"></div>
+
+          <table id="community-out" border="1"></table>
+        </div>
+        <!-- COLLECTION TABLE -->
+        <div class="collection">
+          <table id="character-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Race</th>
+                <th>Nationality</th>
+              </tr>
+            </thead>
+            <tbody id="character-out">
+
+              <!-- EXAMPLE ENTRY -->
+              <tr>
+                <td><button type="submit" title="Click to Edit" class="edit"><i class="fas fa-edit fa-fw"></i></button></td>
+                <td><button type="submit" title="Click to Delete" class="delete"><i class="fas fa-trash-alt fa-fw"></i></button></td>
+                <td>Wren</td>
+                <td>Bounty Hunter</td>
+                <td>123</td>
+                <td>Female</td>
+                <td>Human</td>
+                <td>Khesi</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div id="example-out">
+          </div>
+        </div>
+
+        <table id="output" border="1"></table>
+      </main>
+
+<!--
+<footer class="footer">
+  <p id="footer"></p>
+</footer>
+-->
+
+    </div>
+    <script src="./scripts/modernizr-custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/ajax.js"></script>
+  </body>
+</html>
+<!-- CITATIONS
+Radio Checkboxes:
+https://codepen.io/w3programmings/pen/zzRKpy?editors=1100#0
+
+Max Length Input Type="number":
+https://stackoverflow.com/questions/18510845/maxlength-ignored-for-input-type-number-in-chrome
+
+Input Focus Transition:
+https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_input_animate
+
+Slide-In & Shadow Pop Animations:
+http://animista.net/play/entrances/slide-in-fwd/slide-in-fwd-left
+http://animista.net/play/basic/shadow-pop/shadow-pop-br
+
+Submit Button Transition:
+http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+
+Uppercase First Letter, Lowercase Remaining (For Each Word):
+https://www.w3resource.com/javascript-exercises/javascript-string-exercise-9.php
+
+Image Full Canvas Width/Height:
+https://stackoverflow.com/questions/36257809/display-the-full-image-size-100-width-height-inside-a-html5-canvas-of-a-certa
+-->

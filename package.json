@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nilsson-Joshua/cs313-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nilsson-Joshua/cs313-node/issues"
+  },
+  "homepage": "https://github.com/Nilsson-Joshua/cs313-node#readme",
+  "description": ""
+}

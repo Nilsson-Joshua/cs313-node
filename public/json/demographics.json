@@ -1,0 +1,45 @@
+{
+"demographics": [{
+  "name": "John",
+  "role": "Hunter",
+  "age": 25,
+  "gender": "Male",
+  "race": "Human",
+  "nationality": "American"
+}, {
+  "name": "Jacob",
+  "role": "Gatherer",
+  "age": 38,
+  "gender": "Male",
+  "race": "Human",
+  "nationality": "American"
+}, {
+  "name": "Jingle",
+  "role": "Queen",
+  "age": 17,
+  "gender": "Female",
+  "race": "Human",
+  "nationality": "American"
+}, {
+  "name": "Heimer",
+  "role": "Squire",
+  "age": 73,
+  "gender": "Male",
+  "race": "Human",
+  "nationality": "American"
+}, {
+  "name": "Schmidt",
+  "role": "Cook",
+  "age": 96,
+  "gender": "Male",
+  "race": "Human",
+  "nationality": "American"
+}, {
+  "name": "Junior",
+  "role": "Scout",
+  "age": 10,
+  "gender": "Female",
+  "race": "Vampire",
+  "nationality": "American"
+}]
+}
