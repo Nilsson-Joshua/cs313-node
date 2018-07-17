@@ -539,25 +539,21 @@ document.addEventListener('DOMContentLoaded', function(e) {
 });
 
 if (window.location.search.indexOf('table=local') > -1 || window.location.search.indexOf('') > -1) {
-  // Check #x
   $( "#community" ).prop( "checked", false );
   $( "#local" ).prop( "checked", true );
 }
 
 else {
-  // Check #x
   $( "#local" ).prop( "checked", false );
   $( "#community" ).prop( "checked", true );
 }
 
 if (currentTable === 'local') {
-  // Check #x
   $( "#community" ).prop( "checked", false );
   $( "#local" ).prop( "checked", true );
 }
 
 else {
-  // Check #x
   $( "#local" ).prop( "checked", false );
   $( "#community" ).prop( "checked", true );
 }
