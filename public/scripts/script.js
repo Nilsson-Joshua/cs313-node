@@ -561,6 +561,3 @@ else {
   $( "#local" ).prop( "checked", false );
   $( "#community" ).prop( "checked", true );
 }
-
-// ISSUES:
-// processupdate
